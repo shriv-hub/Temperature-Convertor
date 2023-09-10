@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Temperature Convertor</title>
+        <script src = "https://kit.fontawesome.com/11c75dba75.js"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="temp_container">
+            <div class="header">
+                <span class="Heading"> Temperature Convertor</span>
+                <span class="icon"><i class="fas fa-temperature-high"></i></span>
+            </div>
+
+            <div class="text_symbol">
+                <span>&#8451 &#8457</span>
+                <span class="temo_icon"><i class="fas fa-cloud-sun-rain"></i></span>
+            </div>
+            <div class="input_temperature">
+                <div class="celcius">
+                    <span class="text_celcius">Celcius &#8451</span>
+                    <input type="number" value="0" id="celcius">
+                </div>
+
+                <div>
+                    <span class="text_farenheit">Farenheit &#8457</span>
+                    <input type="number" value="32" id="Farenheit">
+                </div>
+
+            </div>
+        </div>
+    </body>
+    <script>
+        var celcius = document.getElementById("celcius");
+        var Farenheit = document.getElementById("Farenheit");
+
+        celcius.addEventListener('input', function(){
+            let cel = this.value;
+            let Fah = (cel*9/5)+32;
+            if(!Number.isInteger(Fah)){
+                Fah = Fah.toFixed(4);
+            }
+            Farenheit.value=Fah;
+        });
+        Farenheit.addEventListener('input', function(){
+        let Fah = this.value;
+        let cel = (Fah-32)*5/9;
+        if(!Number.isInteger(cel)){
+            cel = cel.toFixed;
+        }
+        celcius.value=cel;
+        });
+    </script>
+</html>
+    
